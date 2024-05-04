@@ -1,8 +1,8 @@
-name: Build and deploy Doxygen documentation 
+name: Build and deploy Doxygen documentation
 
 on:
   push:
-    branches: master
+    branches: main
 
 permissions:
   contents: read
@@ -20,12 +20,12 @@ jobs:
         uses: mattnotmitt/doxygen-action@v1.1.0
         with:
           doxyfile-path: "./Doxyfile" 
-          working-directory: "./doc/html" 
+          working-directory: "." 
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./doc/html
+          path: ./docs/html
 
   deploy:
     runs-on: ubuntu-latest
