@@ -20,7 +20,7 @@ jobs:
         uses: mattnotmitt/doxygen-action@v1.1.0
         with:
           doxyfile-path: "./Doxyfile" 
-          working-directory: "." 
+          working-directory: "./doc/html" 
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
